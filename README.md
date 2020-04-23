@@ -1,5 +1,5 @@
 # <div align="center">Applied-Linear-Controls-Project-Part-2</div>
-**<div align="center">To develop an [output feedback controller](http://www.cds.caltech.edu/~murray/books/AM08/pdf/am06-outputfbk_16Sep06.pdf) and demonstrate regulation of states and outputs using the dynamic system from the Project Part 1 [system identification](https://www.mathworks.com/help/ident/gs/about-system-identification.html) methods</div>**
+**<div align="center">To develop an [output feedback controller](http://www.cds.caltech.edu/~murray/books/AM08/pdf/am06-outputfbk_16Sep06.pdf) and demonstrate regulation of states and outputs using the dynamic system from the Project Part 1. </div>**
 
 > **Note**: The first step for developing a state feedback or an output feedback controller is to develop a state-space model of the open loop plant, which is done in the Project Part 1.
 
