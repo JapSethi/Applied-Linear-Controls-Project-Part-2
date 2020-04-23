@@ -1,11 +1,11 @@
 # <div align="center">Applied-Linear-Controls-Project-Part-2</div>
-**<div align="center">To develop and validate an empirical discrete-time state-space model of the dynamic system using [system identification](https://www.mathworks.com/help/ident/gs/about-system-identification.html) methods</div>**
+**<div align="center">To develop an [output feedback controller](http://www.cds.caltech.edu/~murray/books/AM08/pdf/am06-outputfbk_16Sep06.pdf) and demonstrate regulation of states and outputs using the dynamic system from the Project Part 1 [system identification](https://www.mathworks.com/help/ident/gs/about-system-identification.html) methods</div>**
 
-> **Note**: For this project, we assume that nothing specific is known about the system dynamics; however, we do know that it has two outputs and one input, and we know that the system is open-loop stable.
+> **Note**: The first step for developing a state feedback or an output feedback controller is to develop a state-space model of the open loop plant, which is done in the Project Part 1.
 
 #### How to Access the Unknown Plant function in the script:
 ```Matlab
-  y = s20_plant(u)
+  [y, u, xhat] = s20_plant(dt_ofc, time)
 ```
 
 #### Tasks List:
@@ -14,6 +14,10 @@
 - [x] Finding the appropriate reduced order LTI object whose FRF is in coherence with the above two
 
 #### Objectives Achieved: 
+
+- 
+
+
 
 - Constructed an excitation signal for System Identification following the saturation limit for DAC (Digital-to-Analog Converter)
 - Estimated the SNR (Signal to Noise Ratio) for each path of signal `u1 -> y1` and `u1 -> y2`
