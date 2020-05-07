@@ -10,35 +10,27 @@
 
 #### Tasks List:
 - [x] Executing the appropriate code based on the sequential objectives below
-- [x] Debugging (Comparison of [H1 Estimate](https://community.sw.siemens.com/s/article/what-is-a-frequency-response-function-frf) and [Minimum Realization](https://en.wikipedia.org/wiki/Minimal_realization) FRF)
-- [x] Finding the appropriate reduced order LTI object whose FRF is in coherence with the above two
+- [x] Finding appropriate LQR gains such that the 2 output responses converge and pass all the Mandatory Performance Requirements
+- [x] Finding appropriate [Kalman Filter](https://www.intechopen.com/books/introduction-and-implementations-of-the-kalman-filter/introduction-to-kalman-filter-and-its-applications) Gains such that the Discrete time Output feedback controller converges the actual response and estimated response signals converge and pass all the Mandatory Performance Requirements
 
 #### Objectives Achieved: 
 
-- 
+- Generated a pulse excitation signal with a magnitude of 10V and applied to both the unknown plant and the reduced order model from Project Part 1 to plot the output response signals
+- Tested the Discrete State-Space Model from Project Part 1 for controllability and observability using `ctrb()` and `obsv()` functions
+- Designed an LQR state feedback controller using `lqr()` function to generate a closed-loop time response
+> **Note**: Since we have discrete time state space model, we use `stairs()` function to plot our digitally spaced data
+- Estimated the state vector by designing the appropriate Kalman state feedback gain using `kalman()` function
+- Constructed the discrete time state space output feedback controller LTI object `dt_ofc` and inputed into the s20_plant.p file using the above stated call structure to generate the closed loop response for the output feedback controller
+- Compared the estimated output response and the actual output response 
 
+### <div align="center">*Comparison b/w Actual response (using actual unknown plant) and simulated response (using reduced model from Project part 1) when excited with same pulse excitation of 10V*</div>
+<p align="center"><img src="SimulatedActualSamePuleInput_Final.jpg"> </p>
 
+### <div align="center">*Closed Loop time response using LQR state feedback control*</div>
+<p align="center"><img src="ClosedLoopLqrResponse_Final.jpg"> </p>
 
-- Constructed an excitation signal for System Identification following the saturation limit for DAC (Digital-to-Analog Converter)
-- Estimated the SNR (Signal to Noise Ratio) for each path of signal `u1 -> y1` and `u1 -> y2`
-- Computed the Power Spectrum for responses and noise signals
-- Applied H1 estimate technique to estimate the frequency response function and estimated coherence of each path
-- Estimated Discrete time transfer functions for each path using `invfreqz()` function and converted it into minimum realization using `minreal()` function
-- Generated a Balanced Realization using `balreal()` and plotted the [Hankel singular values](https://en.wikipedia.org/wiki/Hankel_singular_value) to help generate a reduced order LTI discrete time state space model using `modred()`
-- Generated z-domain grid to plot the z-domain eigen values (poles) for each path using `zgrid()` function
-- Computed and Plotted final discrete-time state space LTI object in comparison to H1 estimate
-
-
-<p align="center"><img src="Excitation.jpeg"> </p>
-
-<p align="center"><img src="Hankel.jpeg"> </p>
-
-<p align="center"><img src="zgrid.jpeg"> </p>
-
-<p align="center"><img src="FinalPlots.jpeg"> </p>
-
-
-
+### <div align="center">*Final Comparison between estimated output and actual output*</div>
+<p align="center"><img src="Outputfeedbackresponse_Final.jpg"> </p>
 
 
 #### Languages Used:
@@ -46,6 +38,6 @@
 - Latex 
 
 #### Use of each file:
-- [**Final_Project_Japnit_Sethi.mlx**](Midterm_Project_Japnit_Sethi.mlx) - Executable file with learly defined problem statement and approach
-- [**Final_Project_Japnit_Sethi.pdf**](Midterm_Project_Japnit_Sethi.pdf) - Published Document for a quick check of Solutions and Code
+- [**Final_Project_Sethi.mlx**](Final_Project_Sethi.mlx) - Executable file with learly defined problem statement and approach
+- [**Final_Project_Sethi.pdf**](Final_Project_Sethi.pdf) - Published Document for a quick check of Solutions and Code
 - [**s20_plant.p**](s20_plant.p) - Unknown Plant function file that takes discrete time State-Space LTI object and time as total duration og simulation and returns the output response y(2xN), control signal response u(1XN) and estimated state response xhat(NS X N) where N is the number of samples of data collected and NS is the number of states in our open loop discrete-time model.
