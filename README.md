@@ -5,7 +5,7 @@
 
 #### How to Access the Unknown Plant function in the script:
 ```Matlab
-  [y, u, xhat] = s20_plant(dt_ofc, time)
+  [y, u, xhat] = s20_plant(dt_ofc, time);
 ```
 
 #### Tasks List:
